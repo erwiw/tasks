@@ -5,7 +5,12 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    if (numbers.length === 0) {
+        return [];
+    } else {
+        let bookEnds = [numbers[0], numbers[numbers.length - 1]];
+        return bookEnds;
+    }
 }
 
 /**
@@ -13,7 +18,8 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    const tripled: number[] = numbers.map((num: number): number => num * 3);
+    return tripled;
 }
 
 /**
@@ -21,7 +27,7 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    return numbers.map((num: string): number => parseInt(num) || 0);
 }
 
 /**
@@ -32,7 +38,9 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    return amounts.map((amt: string): number =>
+        amt[0] === "$" ? parseInt(amt.slice(1)) || 0 : parseInt(amt) || 0,
+    );
 };
 
 /**
@@ -41,7 +49,13 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    let shouted = [...messages];
+    shouted = shouted
+        .map((msg: string): string =>
+            msg[msg.length - 1] === "!" ? msg.toUpperCase() : msg,
+        )
+        .filter((msg: string): boolean => msg[msg.length - 1] !== "?");
+    return shouted;
 };
 
 /**
@@ -49,7 +63,11 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    return words.reduce(
+        (count: number, word: string): number =>
+            word.length < 4 ? count + 1 : count,
+        0,
+    );
 }
 
 /**
@@ -58,7 +76,10 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    return colors.every(
+        (color: string): boolean =>
+            color === "red" || color === "blue" || color === "green",
+    );
 }
 
 /**
