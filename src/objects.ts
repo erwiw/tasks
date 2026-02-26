@@ -44,15 +44,14 @@ export function isCorrect(question: Question, answer: string): boolean {
  */
 export function isValid(question: Question, answer: string): boolean {
     if (question.type !== "short_answer_question") {
-        for (let i = 0; i < question.options.length; i++) {
-            if (question.options[i] === answer) {
-                return true;
-            }
-        }
+        const validity = question.options.reduce(
+            (valid: boolean, option: string) => valid || option === answer,
+            false,
+        );
+        return validity;
     } else {
         return true;
     }
-    return false;
 }
 
 /**
@@ -87,9 +86,13 @@ export function toShortForm(question: Question): string {
 export function toMarkdown(question: Question): string {
     let markdown = "# " + question.name + "\n" + question.body;
     if (question.type === "multiple_choice_question") {
-        for (let i = 0; i < question.options.length; i++) {
-            markdown += "\n- " + question.options[i];
-        }
+        let markdown2 =
+            markdown +
+            question.options.reduce(
+                (marked: string, option: string) => marked + "\n- " + option,
+                "",
+            );
+        return markdown2;
     }
     return markdown;
 }
