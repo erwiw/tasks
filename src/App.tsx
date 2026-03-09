@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import headshot from "./images/prof pic 2.jpg";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
