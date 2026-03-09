@@ -48,7 +48,7 @@ describe("Testing the object functions", () => {
     //////////////////////////////////
     // makeBlankQuestion
 
-    test("(3 pts) Testing the makeBlankQuestion function", () => {
+    test("Testing the makeBlankQuestion function", () => {
         expect(
             makeBlankQuestion(1, "Question 1", "multiple_choice_question"),
         ).toEqual(BLANK_QUESTIONS[0]);
