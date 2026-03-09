@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-<<<<<<< HEAD
 
 export function ChangeType(): React.JSX.Element {
     const [type, changeType] = useState("short_answer_question");
@@ -18,10 +17,4 @@ export function ChangeType(): React.JSX.Element {
             {type === "multiple_choice_question" && <div>Multiple Choice</div>}
         </div>
     );
-=======
-import { QuestionType } from "../interfaces/question";
-
-export function ChangeType(): React.JSX.Element {
-    return <div>Change Type</div>;
->>>>>>> upstream/task-components
 }

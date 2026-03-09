@@ -1,23 +1,17 @@
 import React from "react";
 import "./App.css";
-<<<<<<< HEAD
 import headshot from "./images/prof pic 2.jpg";
-=======
->>>>>>> upstream/task-components
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
-<<<<<<< HEAD
 import { Button, Col, Container, Row } from "react-bootstrap";
-=======
 import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
->>>>>>> upstream/task-components
 
 function App(): React.JSX.Element {
     return (
@@ -25,7 +19,6 @@ function App(): React.JSX.Element {
             <header className="App-header" style={{ color: "blue" }}>
                 UD CISC275 with React Hooks and TypeScript
             </header>
-<<<<<<< HEAD
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. By Wyatt Erwin
@@ -70,7 +63,6 @@ function App(): React.JSX.Element {
                     </Col>
                 </Row>
             </Container>
-=======
             <hr></hr>
             {/* <DoubleHalf></DoubleHalf> */}
             <hr></hr>
@@ -79,7 +71,6 @@ function App(): React.JSX.Element {
             <ColoredBox></ColoredBox>
             <hr></hr>
             <ShoveBox></ShoveBox>
->>>>>>> upstream/task-components
             <hr></hr>
             <Counter></Counter>
             <hr />
