@@ -28,20 +28,24 @@ export function EditMode(): React.JSX.Element {
                 checked={editMode}
                 onChange={changeEditMode}
             />
-            <Form.Check
-                type="checkbox"
-                id="student-check"
-                label="Student"
-                checked={student}
-                onChange={changeStudent}
-            />
-            <Form.Group controlId="formMovieName">
-                <Form.Label>Name:</Form.Label>
-                <Form.Control value={userName} onChange={updateName} />
-            </Form.Group>
-            <div>
-                {userName} is {student ? "a student" : "not a student"}.
-            </div>
+            {editMode ?
+                <div>
+                    <Form.Group controlId="formMovieName">
+                        <Form.Label>Name:</Form.Label>
+                        <Form.Control value={userName} onChange={updateName} />
+                    </Form.Group>
+                    <Form.Check
+                        type="checkbox"
+                        id="student-check"
+                        label="Student"
+                        checked={student}
+                        onChange={changeStudent}
+                    />
+                </div>
+            :   <div>
+                    {userName} is {student ? "a student" : "not a student"}.
+                </div>
+            }
         </div>
     );
 }
